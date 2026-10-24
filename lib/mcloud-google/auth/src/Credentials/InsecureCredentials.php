@@ -40,7 +40,7 @@ class InsecureCredentials implements FetchAuthTokenInterface
      * keys:
      *   - access_token (string)
      */
-    public function fetchAuthToken(callable $httpHandler = null)
+    public function fetchAuthToken(?callable $httpHandler = null)
     {
         return $this->token;
     }

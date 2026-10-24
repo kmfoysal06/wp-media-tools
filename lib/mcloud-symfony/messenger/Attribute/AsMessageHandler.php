@@ -20,10 +20,10 @@ namespace MediaCloud\Vendor\Symfony\Component\Messenger\Attribute;
 class AsMessageHandler
 {
     public function __construct(
-        string $bus = null,
-        string $fromTransport = null,
-        string $handles = null,
-        string $method = null,
+        ?string $bus = null,
+        ?string $fromTransport = null,
+        ?string $handles = null,
+        ?string $method = null,
         int $priority = 0
     ) {
     }

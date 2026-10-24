@@ -525,7 +525,7 @@ class OAuth2 implements FetchAuthTokenInterface
      * @param callable $httpHandler callback which delivers psr7 request
      * @return array the response
      */
-    public function fetchAuthToken(callable $httpHandler = null)
+    public function fetchAuthToken(?callable $httpHandler = null)
     {
         if (is_null($httpHandler)) {
             $httpHandler = HttpHandlerFactory::build(HttpClientCache::getHttpClient());
@@ -1352,7 +1352,7 @@ class OAuth2 implements FetchAuthTokenInterface
      * @return string
      * @access private
      */
-    public function getClientName(callable $httpHandler = null)
+    public function getClientName(?callable $httpHandler = null)
     {
         return $this->getClientId();
     }

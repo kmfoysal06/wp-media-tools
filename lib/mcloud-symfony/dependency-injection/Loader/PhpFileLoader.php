@@ -35,7 +35,7 @@ class PhpFileLoader extends FileLoader
     protected $autoRegisterAliasesForSinglyImplementedInterfaces = false;
     private $generator;
 
-    public function __construct(ContainerBuilder $container, FileLocatorInterface $locator, string $env = null, ConfigBuilderGeneratorInterface $generator = null)
+    public function __construct(ContainerBuilder $container, FileLocatorInterface $locator, ?string $env = null, ?ConfigBuilderGeneratorInterface $generator = null)
     {
         parent::__construct($container, $locator, $env);
         $this->generator = $generator;
@@ -44,7 +44,7 @@ class PhpFileLoader extends FileLoader
     /**
      * {@inheritdoc}
      */
-    public function load($resource, string $type = null)
+    public function load($resource, ?string $type = null)
     {
         // the container and loader variables are exposed to the included file below
         $container = $this->container;
@@ -76,7 +76,7 @@ class PhpFileLoader extends FileLoader
     /**
      * {@inheritdoc}
      */
-    public function supports($resource, string $type = null)
+    public function supports($resource, ?string $type = null)
     {
         if (!\is_string($resource)) {
             return false;

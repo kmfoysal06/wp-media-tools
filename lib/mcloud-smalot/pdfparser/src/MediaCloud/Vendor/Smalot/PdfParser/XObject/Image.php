@@ -37,7 +37,7 @@ use MediaCloud\Vendor\Smalot\PdfParser\PDFObject;
  */
 class Image extends PDFObject
 {
-    public function getText(Page $page = null): string
+    public function getText(?Page $page = null): string
     {
         return '';
     }

@@ -39,7 +39,7 @@ class NullAdapter implements AdapterInterface, CacheInterface
     /**
      * {@inheritdoc}
      */
-    public function get(string $key, callable $callback, float $beta = null, array &$metadata = null)
+    public function get(string $key, callable $callback, ?float $beta = null, ?array &$metadata = null)
     {
         $save = true;
 

@@ -23,7 +23,7 @@ class UnknownGetterException extends BaseInvalidArgumentException implements Inv
      * @param int            $code
      * @param Exception|null $previous
      */
-    public function __construct($name, $code = 0, Exception $previous = null)
+    public function __construct($name, $code = 0, ?Exception $previous = null)
     {
         parent::__construct("Unknown getter '$name'", $code, $previous);
     }

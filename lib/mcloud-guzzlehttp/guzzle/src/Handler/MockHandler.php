@@ -31,9 +31,9 @@ class MockHandler implements \Countable
      * @return HandlerStack
      */
     public static function createWithMiddleware(
-        array $queue = null,
-        callable $onFulfilled = null,
-        callable $onRejected = null
+        ?array $queue = null,
+        ?callable $onFulfilled = null,
+        ?callable $onRejected = null
     ) {
         return HandlerStack::create(new self($queue, $onFulfilled, $onRejected));
     }
@@ -48,9 +48,9 @@ class MockHandler implements \Countable
      * @param callable $onRejected  Callback to invoke when the return value is rejected.
      */
     public function __construct(
-        array $queue = null,
-        callable $onFulfilled = null,
-        callable $onRejected = null
+        ?array $queue = null,
+        ?callable $onFulfilled = null,
+        ?callable $onRejected = null
     ) {
         $this->onFulfilled = $onFulfilled;
         $this->onRejected = $onRejected;
@@ -183,7 +183,7 @@ class MockHandler implements \Countable
     private function invokeStats(
         RequestInterface $request,
         array $options,
-        ResponseInterface $response = null,
+        ?ResponseInterface $response = null,
         $reason = null
     ) {
         if (isset($options['on_stats'])) {

@@ -29,7 +29,7 @@ trait CacheTrait
      *
      * @return mixed
      */
-    public function get(string $key, callable $callback, float $beta = null, array &$metadata = null)
+    public function get(string $key, callable $callback, ?float $beta = null, ?array &$metadata = null)
     {
         return $this->doGet($this, $key, $callback, $beta, $metadata);
     }
@@ -42,7 +42,7 @@ trait CacheTrait
         return $this->deleteItem($key);
     }
 
-    private function doGet(CacheItemPoolInterface $pool, string $key, callable $callback, ?float $beta, array &$metadata = null, LoggerInterface $logger = null)
+    private function doGet(CacheItemPoolInterface $pool, string $key, callable $callback, ?float $beta, ?array &$metadata = null, ?LoggerInterface $logger = null)
     {
         if (0 > $beta = $beta ?? 1.0) {
             throw new class(sprintf('Argument "$beta" provided to "%s::get()" must be a positive number, %f given.', static::class, $beta)) extends \InvalidArgumentException implements InvalidArgumentException { };

@@ -12,8 +12,8 @@ class BadResponseException extends RequestException
     public function __construct(
         $message,
         RequestInterface $request,
-        ResponseInterface $response = null,
-        \Exception $previous = null,
+        ?ResponseInterface $response = null,
+        ?\Exception $previous = null,
         array $handlerContext = []
     ) {
         if (null === $response) {

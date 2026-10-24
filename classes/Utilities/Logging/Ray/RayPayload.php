@@ -16,7 +16,7 @@ class RayPayload extends Payload
 	 */
 	protected $pathMapper;
 
-	public function __construct(string $level = '', string $html = '', callable $pathMapper = null) {
+	public function __construct(string $level = '', string $html = '', ?callable $pathMapper = null) {
 		$this->html = $html;
 		$this->level = $level;
 		$this->pathMapper = $pathMapper;

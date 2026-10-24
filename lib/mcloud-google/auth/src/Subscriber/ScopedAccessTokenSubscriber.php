@@ -71,8 +71,8 @@ class ScopedAccessTokenSubscriber implements SubscriberInterface
     public function __construct(
         callable $tokenFunc,
         $scopes,
-        array $cacheConfig = null,
-        CacheItemPoolInterface $cache = null
+        ?array $cacheConfig = null,
+        ?CacheItemPoolInterface $cache = null
     ) {
         $this->tokenFunc = $tokenFunc;
         if (!(is_string($scopes) || is_array($scopes))) {

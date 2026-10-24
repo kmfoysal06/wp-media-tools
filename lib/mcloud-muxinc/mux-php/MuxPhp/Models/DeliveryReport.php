@@ -181,7 +181,7 @@ class DeliveryReport implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['live_stream_id'] = isset($data['live_stream_id']) ? $data['live_stream_id'] : null;
         $this->container['asset_id'] = isset($data['asset_id']) ? $data['asset_id'] : null;

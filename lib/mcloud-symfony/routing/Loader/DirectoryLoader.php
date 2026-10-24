@@ -19,7 +19,7 @@ class DirectoryLoader extends FileLoader
     /**
      * {@inheritdoc}
      */
-    public function load($file, string $type = null)
+    public function load($file, ?string $type = null)
     {
         $path = $this->locator->locate($file);
 
@@ -48,7 +48,7 @@ class DirectoryLoader extends FileLoader
     /**
      * {@inheritdoc}
      */
-    public function supports($resource, string $type = null)
+    public function supports($resource, ?string $type = null)
     {
         // only when type is forced to directory, not to conflict with AnnotationLoader
 

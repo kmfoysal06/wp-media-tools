@@ -115,7 +115,7 @@ class ErrorHandler
      *
      * @return self The registered error handler
      */
-    public static function register(self $handler = null, $replace = true)
+    public static function register(?self $handler = null, $replace = true)
     {
         if (null === self::$reservedMemory) {
             self::$reservedMemory = str_repeat('x', 32768);
@@ -162,7 +162,7 @@ class ErrorHandler
         return $handler;
     }
 
-    public function __construct(BufferingLogger $bootstrappingLogger = null)
+    public function __construct(?BufferingLogger $bootstrappingLogger = null)
     {
         if ($bootstrappingLogger) {
             $this->bootstrappingLogger = $bootstrappingLogger;
@@ -263,7 +263,7 @@ class ErrorHandler
      *
      * @return callable|null The previous exception handler
      */
-    public function setExceptionHandler(callable $handler = null)
+    public function setExceptionHandler(?callable $handler = null)
     {
         $prev = $this->exceptionHandler;
         $this->exceptionHandler = $handler;
@@ -517,7 +517,7 @@ class ErrorHandler
      *
      * @internal
      */
-    public function handleException($exception, array $error = null)
+    public function handleException($exception, ?array $error = null)
     {
         if (null === $error) {
             self::$exitCode = 255;
@@ -588,7 +588,7 @@ class ErrorHandler
      *
      * @internal
      */
-    public static function handleFatalError(array $error = null)
+    public static function handleFatalError(?array $error = null)
     {
         if (null === self::$reservedMemory) {
             return;

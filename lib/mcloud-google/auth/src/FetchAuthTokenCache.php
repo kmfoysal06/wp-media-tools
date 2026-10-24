@@ -53,7 +53,7 @@ class FetchAuthTokenCache implements
      */
     public function __construct(
         FetchAuthTokenInterface $fetcher,
-        array $cacheConfig = null,
+        ?array $cacheConfig,
         CacheItemPoolInterface $cache
     ) {
         $this->fetcher = $fetcher;
@@ -74,7 +74,7 @@ class FetchAuthTokenCache implements
      * @return array the response
      * @throws \Exception
      */
-    public function fetchAuthToken(callable $httpHandler = null)
+    public function fetchAuthToken(?callable $httpHandler = null)
     {
         if ($cached = $this->fetchAuthTokenFromCache()) {
             return $cached;
@@ -109,7 +109,7 @@ class FetchAuthTokenCache implements
      * @param callable $httpHandler An HTTP handler to deliver PSR7 requests.
      * @return string
      */
-    public function getClientName(callable $httpHandler = null)
+    public function getClientName(?callable $httpHandler = null)
     {
         if (!$this->fetcher instanceof SignBlobInterface) {
             throw new \RuntimeException(
@@ -173,7 +173,7 @@ class FetchAuthTokenCache implements
      * @throws \RuntimeException If the fetcher does not implement
      *     `Google\Auth\ProvidesProjectIdInterface`.
      */
-    public function getProjectId(callable $httpHandler = null)
+    public function getProjectId(?callable $httpHandler = null)
     {
         if (!$this->fetcher instanceof ProjectIdProviderInterface) {
             throw new \RuntimeException(
@@ -198,7 +198,7 @@ class FetchAuthTokenCache implements
     public function updateMetadata(
         $metadata,
         $authUri = null,
-        callable $httpHandler = null
+        ?callable $httpHandler = null
     ) {
         if (!$this->fetcher instanceof UpdateMetadataInterface) {
             throw new \RuntimeException(

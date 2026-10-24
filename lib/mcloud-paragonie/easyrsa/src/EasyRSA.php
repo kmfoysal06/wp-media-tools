@@ -31,7 +31,7 @@ class EasyRSA implements EasyRSAInterface
      * @param RSA|null $rsa
      * @return void
      */
-    public static function setRsa(RSA $rsa = null)
+    public static function setRsa(?RSA $rsa = null)
     {
         self::$rsa = $rsa;
     }

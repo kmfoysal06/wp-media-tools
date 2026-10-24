@@ -201,7 +201,7 @@ class AbridgedVideoView implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['viewer_os_family'] = isset($data['viewer_os_family']) ? $data['viewer_os_family'] : null;

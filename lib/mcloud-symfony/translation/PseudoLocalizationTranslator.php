@@ -85,7 +85,7 @@ final class PseudoLocalizationTranslator implements TranslatorInterface
     /**
      * {@inheritdoc}
      */
-    public function trans(string $id, array $parameters = [], string $domain = null, string $locale = null): string
+    public function trans(string $id, array $parameters = [], ?string $domain = null, ?string $locale = null): string
     {
         $trans = '';
         $visibleText = '';

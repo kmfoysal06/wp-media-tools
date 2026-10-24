@@ -42,9 +42,9 @@ class Expression extends Constraint
      */
     public function __construct(
         $expression,
-        string $message = null,
-        array $values = null,
-        array $groups = null,
+        ?string $message = null,
+        ?array $values = null,
+        ?array $groups = null,
         $payload = null,
         array $options = []
     ) {

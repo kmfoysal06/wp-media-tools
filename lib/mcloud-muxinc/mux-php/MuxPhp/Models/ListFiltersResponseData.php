@@ -156,7 +156,7 @@ class ListFiltersResponseData implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['basic'] = isset($data['basic']) ? $data['basic'] : null;
         $this->container['advanced'] = isset($data['advanced']) ? $data['advanced'] : null;

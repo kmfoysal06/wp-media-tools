@@ -38,7 +38,7 @@ class ArrayNodeDefinition extends NodeDefinition implements ParentNodeDefinition
     /**
      * {@inheritdoc}
      */
-    public function __construct(?string $name, NodeParentInterface $parent = null)
+    public function __construct(?string $name, ?NodeParentInterface $parent = null)
     {
         parent::__construct($name, $parent);
 
@@ -196,7 +196,7 @@ class ArrayNodeDefinition extends NodeDefinition implements ParentNodeDefinition
      *
      * @return $this
      */
-    public function fixXmlConfig(string $singular, string $plural = null)
+    public function fixXmlConfig(string $singular, ?string $plural = null)
     {
         $this->normalization()->remap($singular, $plural);
 

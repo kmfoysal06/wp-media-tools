@@ -78,7 +78,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      *                            This setting is overridden by the stale-if-error HTTP Cache-Control extension
      *                            (see RFC 5861).
      */
-    public function __construct(HttpKernelInterface $kernel, StoreInterface $store, SurrogateInterface $surrogate = null, array $options = [])
+    public function __construct(HttpKernelInterface $kernel, StoreInterface $store, ?SurrogateInterface $surrogate = null, array $options = [])
     {
         $this->store = $store;
         $this->kernel = $kernel;
@@ -468,7 +468,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      *
      * @return Response
      */
-    protected function forward(Request $request, bool $catch = false, Response $entry = null)
+    protected function forward(Request $request, bool $catch = false, ?Response $entry = null)
     {
         if ($this->surrogate) {
             $this->surrogate->addSurrogateCapability($request);

@@ -29,7 +29,7 @@ final class TraceableHttpClient implements HttpClientInterface, ResetInterface, 
     private $stopwatch;
     private $tracedRequests;
 
-    public function __construct(HttpClientInterface $client, Stopwatch $stopwatch = null)
+    public function __construct(HttpClientInterface $client, ?Stopwatch $stopwatch = null)
     {
         $this->client = $client;
         $this->stopwatch = $stopwatch;
@@ -71,7 +71,7 @@ final class TraceableHttpClient implements HttpClientInterface, ResetInterface, 
     /**
      * {@inheritdoc}
      */
-    public function stream($responses, float $timeout = null): ResponseStreamInterface
+    public function stream($responses, ?float $timeout = null): ResponseStreamInterface
     {
         if ($responses instanceof TraceableResponse) {
             $responses = [$responses];

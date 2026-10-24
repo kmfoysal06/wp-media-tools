@@ -146,7 +146,7 @@ class ResultPaginator implements \Iterator
         $this->result = null;
     }
 
-    private function createNextCommand(array $args, array $nextToken = null)
+    private function createNextCommand(array $args, ?array $nextToken = null)
     {
         return $this->client->getCommand($this->operation, array_merge($args, ($nextToken ?: [])));
     }

@@ -24,7 +24,7 @@ use MediaCloud\Vendor\Symfony\Component\RateLimiter\Reservation;
  */
 final class NoLimiter implements LimiterInterface
 {
-    public function reserve(int $tokens = 1, float $maxTime = null): Reservation
+    public function reserve(int $tokens = 1, ?float $maxTime = null): Reservation
     {
         return new Reservation(microtime(true), new RateLimit(\PHP_INT_MAX, new \DateTimeImmutable(), true, \PHP_INT_MAX));
     }

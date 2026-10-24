@@ -336,6 +336,11 @@ class S3Storage implements S3StorageInterface, ConfiguresWizard {
 			Logger::error("AWS Error fetching region", ['exception' => $ex->getMessage()], __METHOD__, __LINE__);
 		}
 
+		// S3 compatible servers like Minio don't return the x-amz-bucket-region header, fall back to their default region
+		if(empty($region) && !empty($this->settings->endpoint)) {
+			$region = 'us-east-1';
+		}
+
 		return $region;
 	}
 

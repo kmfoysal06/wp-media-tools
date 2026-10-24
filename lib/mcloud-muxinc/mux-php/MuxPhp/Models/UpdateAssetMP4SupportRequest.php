@@ -166,7 +166,7 @@ class UpdateAssetMP4SupportRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['mp4_support'] = isset($data['mp4_support']) ? $data['mp4_support'] : null;
     }

@@ -162,8 +162,8 @@ class ApiException extends Exception
     public static function createFromApiResponse(
         $basicMessage,
         $rpcCode,
-        array $metadata = null,
-        \Exception $previous = null
+        ?array $metadata = null,
+        ?\Exception $previous = null
     ) {
         return self::create(
             $basicMessage,
@@ -186,8 +186,8 @@ class ApiException extends Exception
     public static function createFromRestApiResponse(
         $basicMessage,
         $rpcCode,
-        array $metadata = null,
-        \Exception $previous = null
+        ?array $metadata = null,
+        ?\Exception $previous = null
     ) {
         return self::create(
             $basicMessage,

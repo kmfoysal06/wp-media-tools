@@ -120,7 +120,7 @@ class AppIdentityCredentials extends CredentialsLoader implements
      *         - access_token (string)
      *         - expiration_time (string)
      */
-    public function fetchAuthToken(callable $httpHandler = null)
+    public function fetchAuthToken(?callable $httpHandler = null)
     {
         try {
             $this->checkAppEngineContext();
@@ -161,7 +161,7 @@ class AppIdentityCredentials extends CredentialsLoader implements
      * @param callable $httpHandler Not used by this type.
      * @return string|null
      */
-    public function getProjectId(callable $httpHander = null)
+    public function getProjectId(?callable $httpHander = null)
     {
         try {
             $this->checkAppEngineContext();
@@ -181,7 +181,7 @@ class AppIdentityCredentials extends CredentialsLoader implements
      * @return string
      * @throws \Exception If AppEngine SDK or mock is not available.
      */
-    public function getClientName(callable $httpHandler = null)
+    public function getClientName(?callable $httpHandler = null)
     {
         $this->checkAppEngineContext();
 

@@ -23,8 +23,8 @@ class RequestException extends TransferException
     public function __construct(
         $message,
         RequestInterface $request,
-        ResponseInterface $response = null,
-        \Exception $previous = null,
+        ?ResponseInterface $response = null,
+        ?\Exception $previous = null,
         array $handlerContext = []
     ) {
         // Set the code of the exception if the response is set and not future.
@@ -64,8 +64,8 @@ class RequestException extends TransferException
      */
     public static function create(
         RequestInterface $request,
-        ResponseInterface $response = null,
-        \Exception $previous = null,
+        ?ResponseInterface $response = null,
+        ?\Exception $previous = null,
         array $ctx = []
     ) {
         if (!$response) {

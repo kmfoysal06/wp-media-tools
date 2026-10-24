@@ -216,7 +216,7 @@ class CreateAssetRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['input'] = isset($data['input']) ? $data['input'] : null;
         $this->container['playback_policy'] = isset($data['playback_policy']) ? $data['playback_policy'] : null;

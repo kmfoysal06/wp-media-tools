@@ -176,7 +176,7 @@ class Insight implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['total_watch_time'] = isset($data['total_watch_time']) ? $data['total_watch_time'] : null;
         $this->container['total_views'] = isset($data['total_views']) ? $data['total_views'] : null;

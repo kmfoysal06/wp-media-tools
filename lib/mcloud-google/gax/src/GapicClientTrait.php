@@ -452,7 +452,7 @@ trait GapicClientTrait
         $apiEndpoint,
         $transport,
         array $transportConfig,
-        callable $clientCertSource = null
+        ?callable $clientCertSource = null
     ) {
         if (!is_string($transport)) {
             throw new ValidationException(
@@ -548,7 +548,7 @@ trait GapicClientTrait
         $methodName,
         $decodeType,
         array $optionalArgs = [],
-        Message $request = null,
+        ?Message $request = null,
         $callType = Call::UNARY_CALL,
         $interfaceName = null
     ) {

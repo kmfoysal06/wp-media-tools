@@ -34,7 +34,7 @@ trait AsyncDecoratorTrait
     /**
      * {@inheritdoc}
      */
-    public function stream($responses, float $timeout = null): ResponseStreamInterface
+    public function stream($responses, ?float $timeout = null): ResponseStreamInterface
     {
         if ($responses instanceof AsyncResponse) {
             $responses = [$responses];

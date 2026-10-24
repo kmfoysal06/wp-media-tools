@@ -45,7 +45,7 @@ class WriteStream implements StreamInterface
      *            upload data
      * }
      */
-    public function __construct(AbstractUploader $uploader = null, $options = [])
+    public function __construct(?AbstractUploader $uploader = null, $options = [])
     {
         if ($uploader) {
             $this->setUploader($uploader);

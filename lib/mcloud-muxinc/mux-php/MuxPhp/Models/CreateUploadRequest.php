@@ -166,7 +166,7 @@ class CreateUploadRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['timeout'] = isset($data['timeout']) ? $data['timeout'] : 3600;
         $this->container['cors_origin'] = isset($data['cors_origin']) ? $data['cors_origin'] : null;

@@ -131,7 +131,7 @@ interface ExecutionContextInterface
      * @internal Used by the validator engine. Should not be called by user
      *           code.
      */
-    public function setNode($value, ?object $object, MetadataInterface $metadata = null, string $propertyPath);
+    public function setNode($value, ?object $object, ?MetadataInterface $metadata, string $propertyPath);
 
     /**
      * Sets the currently validated group.

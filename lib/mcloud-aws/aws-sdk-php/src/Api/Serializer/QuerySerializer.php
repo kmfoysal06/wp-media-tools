@@ -19,7 +19,7 @@ class QuerySerializer
     public function __construct(
         Service $api,
         $endpoint,
-        callable $paramBuilder = null
+        ?callable $paramBuilder = null
     ) {
         $this->api = $api;
         $this->endpoint = $endpoint;

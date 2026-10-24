@@ -24,7 +24,7 @@ trait DecoratorTrait
 {
     private $client;
 
-    public function __construct(HttpClientInterface $client = null)
+    public function __construct(?HttpClientInterface $client = null)
     {
         $this->client = $client ?? HttpClient::create();
     }
@@ -40,7 +40,7 @@ trait DecoratorTrait
     /**
      * {@inheritdoc}
      */
-    public function stream($responses, float $timeout = null): ResponseStreamInterface
+    public function stream($responses, ?float $timeout = null): ResponseStreamInterface
     {
         return $this->client->stream($responses, $timeout);
     }

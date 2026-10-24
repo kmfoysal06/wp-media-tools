@@ -40,7 +40,7 @@ class Iam
     /**
      * @param callable $httpHandler [optional] The HTTP Handler to send requests.
      */
-    public function __construct(callable $httpHandler = null)
+    public function __construct(?callable $httpHandler = null)
     {
         $this->httpHandler = $httpHandler
             ?: HttpHandlerFactory::build(HttpClientCache::getHttpClient());

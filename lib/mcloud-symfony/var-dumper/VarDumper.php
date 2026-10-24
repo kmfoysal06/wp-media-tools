@@ -48,7 +48,7 @@ class VarDumper
     /**
      * @return callable|null
      */
-    public static function setHandler(callable $callable = null)
+    public static function setHandler(?callable $callable = null)
     {
         $prevHandler = self::$handler;
 

@@ -156,7 +156,7 @@ class InputFile implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['container_format'] = isset($data['container_format']) ? $data['container_format'] : null;
         $this->container['tracks'] = isset($data['tracks']) ? $data['tracks'] : null;

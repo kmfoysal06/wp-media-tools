@@ -19,7 +19,7 @@ abstract class AbstractServiceConfigurator extends AbstractConfigurator
     protected $id;
     private $defaultTags = [];
 
-    public function __construct(ServicesConfigurator $parent, Definition $definition, string $id = null, array $defaultTags = [])
+    public function __construct(ServicesConfigurator $parent, Definition $definition, ?string $id = null, array $defaultTags = [])
     {
         $this->parent = $parent;
         $this->definition = $definition;
@@ -41,7 +41,7 @@ abstract class AbstractServiceConfigurator extends AbstractConfigurator
     /**
      * Registers a service.
      */
-    final public function set(?string $id, string $class = null): ServiceConfigurator
+    final public function set(?string $id, ?string $class = null): ServiceConfigurator
     {
         $this->__destruct();
 
@@ -105,7 +105,7 @@ abstract class AbstractServiceConfigurator extends AbstractConfigurator
     /**
      * Registers a service.
      */
-    final public function __invoke(string $id, string $class = null): ServiceConfigurator
+    final public function __invoke(string $id, ?string $class = null): ServiceConfigurator
     {
         $this->__destruct();
 

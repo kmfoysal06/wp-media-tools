@@ -185,7 +185,7 @@ class Question
      *
      * @return $this
      */
-    public function setAutocompleterCallback(callable $callback = null): self
+    public function setAutocompleterCallback(?callable $callback = null): self
     {
         if ($this->hidden && null !== $callback) {
             throw new LogicException('A hidden question cannot use the autocompleter.');
@@ -201,7 +201,7 @@ class Question
      *
      * @return $this
      */
-    public function setValidator(callable $validator = null)
+    public function setValidator(?callable $validator = null)
     {
         $this->validator = $validator;
 

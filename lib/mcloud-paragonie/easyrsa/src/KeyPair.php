@@ -17,7 +17,7 @@ class KeyPair
     /** @var PublicKey $publicKey */
     protected $publicKey;
 
-    public function __construct(PrivateKey $privateKey, PublicKey $publicKey = null)
+    public function __construct(PrivateKey $privateKey, ?PublicKey $publicKey = null)
     {
         $this->privateKey = $privateKey;
         if (!$publicKey) {

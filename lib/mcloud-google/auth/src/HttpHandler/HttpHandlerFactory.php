@@ -28,7 +28,7 @@ class HttpHandlerFactory
      * @return Guzzle5HttpHandler|Guzzle6HttpHandler|Guzzle7HttpHandler
      * @throws \Exception
      */
-    public static function build(ClientInterface $client = null)
+    public static function build(?ClientInterface $client = null)
     {
         $client = $client ?: new Client();
 

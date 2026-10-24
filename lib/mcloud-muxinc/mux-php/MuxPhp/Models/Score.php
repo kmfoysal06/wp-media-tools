@@ -176,7 +176,7 @@ class Score implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['watch_time'] = isset($data['watch_time']) ? $data['watch_time'] : null;
         $this->container['view_count'] = isset($data['view_count']) ? $data['view_count'] : null;

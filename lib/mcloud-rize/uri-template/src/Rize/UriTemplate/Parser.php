@@ -138,7 +138,7 @@ class Parser
         return new Node\Variable($token, $options);
     }
 
-    protected function createExpressionNode($token, Operator\Abstraction $operator = null, array $vars = array())
+    protected function createExpressionNode($token, ?Operator\Abstraction $operator = null, array $vars = array())
     {
         return new Node\Expression($token, $operator, $vars);
     }

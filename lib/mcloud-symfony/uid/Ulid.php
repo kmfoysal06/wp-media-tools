@@ -25,7 +25,7 @@ class Ulid extends AbstractUid
     private static $time = '';
     private static $rand = [];
 
-    public function __construct(string $ulid = null)
+    public function __construct(?string $ulid = null)
     {
         if (null === $ulid) {
             $this->uid = static::generate();
@@ -143,7 +143,7 @@ class Ulid extends AbstractUid
         return \DateTimeImmutable::createFromFormat('U.u', substr_replace($time, '.', -3, 0));
     }
 
-    public static function generate(\DateTimeInterface $time = null): string
+    public static function generate(?\DateTimeInterface $time = null): string
     {
         if (null === $time) {
             return self::doGenerate();
@@ -156,7 +156,7 @@ class Ulid extends AbstractUid
         return self::doGenerate($time);
     }
 
-    private static function doGenerate(string $mtime = null): string
+    private static function doGenerate(?string $mtime = null): string
     {
         if (null === $time = $mtime) {
             $time = microtime(false);

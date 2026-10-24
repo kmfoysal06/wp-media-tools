@@ -28,7 +28,7 @@ class LineTest extends TestCase
     /**
      * @dataProvider stringTransformationSamples
      */
-    public function testToString($string, Line $line = null)
+    public function testToString($string, ?Line $line = null)
     {
         if (null === $line) {
             return;

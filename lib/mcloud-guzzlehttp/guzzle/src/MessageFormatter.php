@@ -65,8 +65,8 @@ class MessageFormatter
      */
     public function format(
         RequestInterface $request,
-        ResponseInterface $response = null,
-        \Exception $error = null
+        ?ResponseInterface $response = null,
+        ?\Exception $error = null
     ) {
         $cache = [];
 

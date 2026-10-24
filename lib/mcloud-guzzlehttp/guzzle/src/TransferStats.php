@@ -26,7 +26,7 @@ final class TransferStats
      */
     public function __construct(
         RequestInterface $request,
-        ResponseInterface $response = null,
+        ?ResponseInterface $response = null,
         $transferTime = null,
         $handlerErrorData = null,
         $handlerStats = []

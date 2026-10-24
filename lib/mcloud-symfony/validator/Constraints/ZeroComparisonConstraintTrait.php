@@ -20,7 +20,7 @@ use MediaCloud\Vendor\Symfony\Component\Validator\Exception\ConstraintDefinition
  */
 trait ZeroComparisonConstraintTrait
 {
-    public function __construct(array $options = null, string $message = null, array $groups = null, $payload = null)
+    public function __construct(?array $options = null, ?string $message = null, ?array $groups = null, $payload = null)
     {
         if (null === $options) {
             $options = [];

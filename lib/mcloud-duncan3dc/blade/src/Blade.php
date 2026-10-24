@@ -99,7 +99,7 @@ class Blade
      *
      * @return BladeInterface
      */
-    public function aliasComponent(string $path, string $alias=null): BladeInterface
+    public function aliasComponent(string $path, ?string $alias=null): BladeInterface
     {
         return static::getInstance()->aliasComponent($path, $alias);
     }
@@ -108,7 +108,7 @@ class Blade
     /**
      * @deprecated Use aliasComponent()
      */
-    public function component(string $path, string $alias=null): BladeInterface
+    public function component(string $path, ?string $alias=null): BladeInterface
     {
         return static::getInstance()->component($path, $alias);
     }

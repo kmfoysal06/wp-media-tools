@@ -166,7 +166,7 @@ class VideoViewEvent implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['viewer_time'] = isset($data['viewer_time']) ? $data['viewer_time'] : null;
         $this->container['playback_time'] = isset($data['playback_time']) ? $data['playback_time'] : null;

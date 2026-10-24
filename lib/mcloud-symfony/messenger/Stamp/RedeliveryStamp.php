@@ -26,7 +26,7 @@ final class RedeliveryStamp implements StampInterface
     /**
      * @param \DateTimeInterface|null $exceptionMessage
      */
-    public function __construct(int $retryCount, $exceptionMessage = null, FlattenException $flattenException = null, \DateTimeInterface $redeliveredAt = null)
+    public function __construct(int $retryCount, $exceptionMessage = null, ?FlattenException $flattenException = null, ?\DateTimeInterface $redeliveredAt = null)
     {
         $this->retryCount = $retryCount;
         $this->redeliveredAt = $redeliveredAt ?? new \DateTimeImmutable();

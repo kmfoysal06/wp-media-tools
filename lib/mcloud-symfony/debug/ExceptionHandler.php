@@ -51,7 +51,7 @@ class ExceptionHandler
     private $caughtLength;
     private $fileLinkFormat;
 
-    public function __construct(bool $debug = true, string $charset = null, $fileLinkFormat = null)
+    public function __construct(bool $debug = true, ?string $charset = null, $fileLinkFormat = null)
     {
         $this->debug = $debug;
         $this->charset = $charset ?: ini_get('default_charset') ?: 'UTF-8';
@@ -87,7 +87,7 @@ class ExceptionHandler
      *
      * @return callable|null The previous exception handler if any
      */
-    public function setHandler(callable $handler = null)
+    public function setHandler(?callable $handler = null)
     {
         $old = $this->handler;
         $this->handler = $handler;

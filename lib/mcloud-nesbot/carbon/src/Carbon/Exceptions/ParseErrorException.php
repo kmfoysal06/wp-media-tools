@@ -24,7 +24,7 @@ class ParseErrorException extends BaseInvalidArgumentException implements Invali
      * @param int            $code
      * @param Exception|null $previous
      */
-    public function __construct($expected, $actual, $help = '', $code = 0, Exception $previous = null)
+    public function __construct($expected, $actual, $help = '', $code = 0, ?Exception $previous = null)
     {
         $actual = $actual === '' ? 'data is missing' : "get '$actual'";
 

@@ -67,7 +67,7 @@ class CredentialsWrapper
      *        `function (RequestInterface $request, array $options) : ResponseInterface`.
      * @throws ValidationException
      */
-    public function __construct(FetchAuthTokenInterface $credentialsFetcher, callable $authHttpHandler = null)
+    public function __construct(FetchAuthTokenInterface $credentialsFetcher, ?callable $authHttpHandler = null)
     {
         $this->credentialsFetcher = $credentialsFetcher;
         $this->authHttpHandler = $authHttpHandler ?: self::buildHttpHandlerFactory();
@@ -248,12 +248,12 @@ class CredentialsWrapper
      * @throws ValidationException
      */
     private static function buildApplicationDefaultCredentials(
-        array $scopes = null,
-        callable $authHttpHandler = null,
-        array $authCacheOptions = null,
-        CacheItemPoolInterface $authCache = null,
+        ?array $scopes = null,
+        ?callable $authHttpHandler = null,
+        ?array $authCacheOptions = null,
+        ?CacheItemPoolInterface $authCache = null,
         $quotaProject = null,
-        array $defaultScopes = null
+        ?array $defaultScopes = null
     ) {
         try {
             return ApplicationDefaultCredentials::getCredentials(

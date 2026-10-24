@@ -22,7 +22,7 @@ class BadComparisonUnitException extends UnitException
      * @param int            $code
      * @param Exception|null $previous
      */
-    public function __construct($unit, $code = 0, Exception $previous = null)
+    public function __construct($unit, $code = 0, ?Exception $previous = null)
     {
         parent::__construct("Bad comparison unit: '$unit'", $code, $previous);
     }

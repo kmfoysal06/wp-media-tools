@@ -206,7 +206,7 @@ interface ProviderInterface
      * @param int $count
      * @return array
      */
-    public function getPing(array $hosts = null, $count = 2);
+    public function getPing(?array $hosts = null, $count = 2);
 
     /**
      * Retrieves data from $_SERVER array

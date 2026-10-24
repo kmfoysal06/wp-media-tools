@@ -46,7 +46,7 @@ class FlattenException
     /**
      * @return static
      */
-    public static function createFromThrowable(\Throwable $exception, int $statusCode = null, array $headers = [])
+    public static function createFromThrowable(\Throwable $exception, ?int $statusCode = null, array $headers = [])
     {
         $e = new static();
         $e->setMessage($exception->getMessage());

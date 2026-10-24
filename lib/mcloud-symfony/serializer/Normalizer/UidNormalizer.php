@@ -39,7 +39,7 @@ final class UidNormalizer implements NormalizerInterface, DenormalizerInterface,
      *
      * @param AbstractUid $object
      */
-    public function normalize($object, string $format = null, array $context = [])
+    public function normalize($object, ?string $format = null, array $context = [])
     {
         switch ($context[self::NORMALIZATION_FORMAT_KEY] ?? $this->defaultContext[self::NORMALIZATION_FORMAT_KEY]) {
             case self::NORMALIZATION_FORMAT_CANONICAL:
@@ -58,7 +58,7 @@ final class UidNormalizer implements NormalizerInterface, DenormalizerInterface,
     /**
      * {@inheritdoc}
      */
-    public function supportsNormalization($data, string $format = null): bool
+    public function supportsNormalization($data, ?string $format = null): bool
     {
         return $data instanceof AbstractUid;
     }
@@ -66,7 +66,7 @@ final class UidNormalizer implements NormalizerInterface, DenormalizerInterface,
     /**
      * {@inheritdoc}
      */
-    public function denormalize($data, string $type, string $format = null, array $context = [])
+    public function denormalize($data, string $type, ?string $format = null, array $context = [])
     {
         try {
             return AbstractUid::class !== $type ? $type::fromString($data) : Uuid::fromString($data);
@@ -84,7 +84,7 @@ final class UidNormalizer implements NormalizerInterface, DenormalizerInterface,
     /**
      * {@inheritdoc}
      */
-    public function supportsDenormalization($data, string $type, string $format = null): bool
+    public function supportsDenormalization($data, string $type, ?string $format = null): bool
     {
         return is_a($type, AbstractUid::class, true);
     }

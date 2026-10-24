@@ -107,7 +107,7 @@ class StreamWrapper
     public static function register(
         S3ClientInterface $client,
         $protocol = 's3',
-        CacheInterface $cache = null
+        ?CacheInterface $cache = null
     ) {
         if (in_array($protocol, stream_get_wrappers())) {
             stream_wrapper_unregister($protocol);

@@ -161,7 +161,7 @@ class ListErrorsResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
         $this->container['total_row_count'] = isset($data['total_row_count']) ? $data['total_row_count'] : null;

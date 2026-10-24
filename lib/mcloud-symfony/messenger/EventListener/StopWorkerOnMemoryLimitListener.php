@@ -24,7 +24,7 @@ class StopWorkerOnMemoryLimitListener implements EventSubscriberInterface
     private $logger;
     private $memoryResolver;
 
-    public function __construct(int $memoryLimit, LoggerInterface $logger = null, callable $memoryResolver = null)
+    public function __construct(int $memoryLimit, ?LoggerInterface $logger = null, ?callable $memoryResolver = null)
     {
         $this->memoryLimit = $memoryLimit;
         $this->logger = $logger;

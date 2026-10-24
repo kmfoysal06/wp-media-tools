@@ -215,7 +215,7 @@ class InputSettingsOverlaySettings implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['vertical_align'] = isset($data['vertical_align']) ? $data['vertical_align'] : null;
         $this->container['vertical_margin'] = isset($data['vertical_margin']) ? $data['vertical_margin'] : null;

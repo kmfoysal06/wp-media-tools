@@ -161,7 +161,7 @@ class CreateSimulcastTargetRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['passthrough'] = isset($data['passthrough']) ? $data['passthrough'] : null;
         $this->container['stream_key'] = isset($data['stream_key']) ? $data['stream_key'] : null;

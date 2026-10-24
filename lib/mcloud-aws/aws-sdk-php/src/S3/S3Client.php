@@ -568,7 +568,7 @@ class S3Client extends AwsClient implements S3ClientInterface
         return static function (callable $handler) {
             return function (
                 CommandInterface $command,
-                RequestInterface $request = null
+                ?RequestInterface $request = null
             ) use ($handler) {
                 if ($command->getName() === 'HeadObject'
                     && !isset($command['@http']['decode_content'])

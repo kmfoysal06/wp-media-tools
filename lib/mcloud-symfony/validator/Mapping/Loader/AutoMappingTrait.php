@@ -20,7 +20,7 @@ use MediaCloud\Vendor\Symfony\Component\Validator\Mapping\ClassMetadata;
  */
 trait AutoMappingTrait
 {
-    private function isAutoMappingEnabledForClass(ClassMetadata $metadata, string $classValidatorRegexp = null): bool
+    private function isAutoMappingEnabledForClass(ClassMetadata $metadata, ?string $classValidatorRegexp = null): bool
     {
         // Check if AutoMapping constraint is set first
         if (AutoMappingStrategy::NONE !== $strategy = $metadata->getAutoMappingStrategy()) {

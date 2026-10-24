@@ -174,7 +174,7 @@ class DebugClassLoader
         $this->checkClass($class, $file);
     }
 
-    private function checkClass(string $class, string $file = null)
+    private function checkClass(string $class, ?string $file = null)
     {
         $exists = null === $file || class_exists($class, false) || interface_exists($class, false) || trait_exists($class, false);
 

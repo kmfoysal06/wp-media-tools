@@ -57,7 +57,7 @@ class OutOfRangeException extends BaseInvalidArgumentException implements Invali
      * @param int            $code
      * @param Exception|null $previous
      */
-    public function __construct($unit, $min, $max, $value, $code = 0, Exception $previous = null)
+    public function __construct($unit, $min, $max, $value, $code = 0, ?Exception $previous = null)
     {
         $this->unit = $unit;
         $this->min = $min;

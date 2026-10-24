@@ -36,7 +36,7 @@ class FlockStore implements BlockingStoreInterface, SharedLockStoreInterface
      *
      * @throws LockStorageException If the lock directory doesn’t exist or is not writable
      */
-    public function __construct(string $lockPath = null)
+    public function __construct(?string $lockPath = null)
     {
         if (null === $lockPath) {
             $lockPath = sys_get_temp_dir();

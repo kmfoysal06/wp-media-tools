@@ -39,7 +39,7 @@ class DateTime extends Constraint
      *
      * @param string|array|null $format
      */
-    public function __construct($format = null, string $message = null, array $groups = null, $payload = null, array $options = [])
+    public function __construct($format = null, ?string $message = null, ?array $groups = null, $payload = null, array $options = [])
     {
         if (\is_array($format)) {
             $options = array_merge($format, $options);

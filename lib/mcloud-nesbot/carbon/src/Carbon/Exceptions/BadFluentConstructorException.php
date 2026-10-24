@@ -23,7 +23,7 @@ class BadFluentConstructorException extends BaseBadMethodCallException implement
      * @param int            $code
      * @param Exception|null $previous
      */
-    public function __construct($method, $code = 0, Exception $previous = null)
+    public function __construct($method, $code = 0, ?Exception $previous = null)
     {
         parent::__construct(sprintf("Unknown fluent constructor '%s'.", $method), $code, $previous);
     }

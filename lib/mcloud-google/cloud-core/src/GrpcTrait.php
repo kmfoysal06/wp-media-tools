@@ -92,7 +92,7 @@ trait GrpcTrait
      * @param callable|null $authHttpHandler
      * @return array
      */
-    private function getGaxConfig($version, callable $authHttpHandler = null)
+    private function getGaxConfig($version, ?callable $authHttpHandler = null)
     {
         $config = [
             'libName' => 'gccl',

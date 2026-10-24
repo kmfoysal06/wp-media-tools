@@ -62,7 +62,7 @@ class HandlerList implements \Countable
     /**
      * @param callable $handler HTTP handler.
      */
-    public function __construct(callable $handler = null)
+    public function __construct(?callable $handler = null)
     {
         $this->handler = $handler;
     }
@@ -278,7 +278,7 @@ class HandlerList implements \Countable
      *
      * @param callable|null $fn Pass null to remove any previously set function
      */
-    public function interpose(callable $fn = null)
+    public function interpose(?callable $fn = null)
     {
         $this->sorted = null;
         $this->interposeFn = $fn;

@@ -38,7 +38,7 @@ class InvalidDateException extends BaseInvalidArgumentException implements Inval
      * @param int            $code
      * @param Exception|null $previous
      */
-    public function __construct($field, $value, $code = 0, Exception $previous = null)
+    public function __construct($field, $value, $code = 0, ?Exception $previous = null)
     {
         $this->field = $field;
         $this->value = $value;

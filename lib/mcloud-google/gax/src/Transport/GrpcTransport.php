@@ -77,7 +77,7 @@ class GrpcTransport extends BaseStub implements TransportInterface
      *        extends {@see MediaCloud\Vendor\Grpc\Interceptor}.
      * @throws Exception
      */
-    public function __construct($hostname, $opts, Channel $channel = null, array $interceptors = [])
+    public function __construct($hostname, $opts, ?Channel $channel = null, array $interceptors = [])
     {
         if ($interceptors) {
             $channel = Interceptor::intercept(

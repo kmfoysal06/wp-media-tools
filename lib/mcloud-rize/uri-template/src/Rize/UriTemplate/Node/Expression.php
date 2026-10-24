@@ -25,7 +25,7 @@ class Expression extends Abstraction
      */
     private $forwardLookupSeparator;
 
-    public function __construct($token, Operator\Abstraction $operator, array $variables = null, $forwardLookupSeparator = null)
+    public function __construct($token, Operator\Abstraction $operator, ?array $variables = null, $forwardLookupSeparator = null)
     {
         parent::__construct($token);
         $this->operator  = $operator;

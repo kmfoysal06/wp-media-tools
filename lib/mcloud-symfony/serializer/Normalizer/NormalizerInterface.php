@@ -35,7 +35,7 @@ interface NormalizerInterface
      * @throws LogicException             Occurs when the normalizer is not called in an expected context
      * @throws ExceptionInterface         Occurs for all the other cases of errors
      */
-    public function normalize($object, string $format = null, array $context = []);
+    public function normalize($object, ?string $format = null, array $context = []);
 
     /**
      * Checks whether the given class is supported for normalization by this normalizer.
@@ -45,5 +45,5 @@ interface NormalizerInterface
      *
      * @return bool
      */
-    public function supportsNormalization($data, string $format = null);
+    public function supportsNormalization($data, ?string $format = null);
 }

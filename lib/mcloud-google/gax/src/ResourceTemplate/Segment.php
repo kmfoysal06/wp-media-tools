@@ -76,7 +76,7 @@ class Segment
         $segmentType,
         $value = null,
         $key = null,
-        RelativeResourceTemplate $template = null,
+        ?RelativeResourceTemplate $template = null,
         $separator = '/'
     ) {
         $this->segmentType = $segmentType;

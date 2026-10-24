@@ -38,7 +38,7 @@ class Collection extends Composite
     /**
      * {@inheritdoc}
      */
-    public function __construct($fields = null, array $groups = null, $payload = null, bool $allowExtraFields = null, bool $allowMissingFields = null, string $extraFieldsMessage = null, string $missingFieldsMessage = null)
+    public function __construct($fields = null, ?array $groups = null, $payload = null, ?bool $allowExtraFields = null, ?bool $allowMissingFields = null, ?string $extraFieldsMessage = null, ?string $missingFieldsMessage = null)
     {
         // no known options set? $fields is the fields array
         if (\is_array($fields)
